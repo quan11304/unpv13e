@@ -1,5 +1,6 @@
 /* include readline */
 #include	"unp.h"
+#include <stdio.h>
 
 static int	read_cnt;
 static char	*read_ptr;
@@ -63,6 +64,6 @@ Readline(int fd, void *ptr, size_t maxlen)
 	ssize_t		n;
 
 	if ( (n = readline(fd, ptr, maxlen)) < 0)
-		err_sys("readline error");
+		printf("readline error");
 	return(n);
 }
